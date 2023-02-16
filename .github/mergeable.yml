@@ -1,0 +1,14 @@
+version: 2
+mergeable:
+  - when: pull_request.ready_for_review
+    name: "Test vote"
+    validate:
+      - do: title
+        must_exclude:
+          regex: ^\[WIP\]
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Mergeable Run have been Completed!'
+          summary: "All the validators have returned 'pass'!"

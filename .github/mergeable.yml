@@ -7,6 +7,9 @@ mergeable:
         must_exclude:
           regex: ^\[WIP\]
     pass:
+      - do: labels
+        add: 'ready_for_review_single'
+        
       - do: checks
         status: 'success'
         payload:

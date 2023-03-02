@@ -1,27 +1,311 @@
+
 version: 2
 mergeable:
-  - when: pull_request.ready_for_review
-    name: "Test vote pull_request.ready_for_review"
+
+  - when: pull_request.assigned
+    name: "Test vote pull_request.assigned"
     validate:
-      - do: title
-        must_exclude:
-          regex: ^\[WIP\]
+      - do: description
+        no_empty:
+          enabled: false
     pass:
       - do: checks
         status: 'success'
         payload:
-          title: 'Mergeable: pull_request.ready_for_review'
+          title: 'Check run of pull_request.assigned'
           summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.auto_merge_disabled
+    name: "Test vote pull_request.auto_merge_disabled"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.auto_merge_disabled'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.auto_merge_enabled
+    name: "Test vote pull_request.auto_merge_enabled"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.auto_merge_enabled'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.closed
+    name: "Test vote pull_request.closed"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.closed'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.converted_to_draft
+    name: "Test vote pull_request.converted_to_draft"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.converted_to_draft'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.demilestoned
+    name: "Test vote pull_request.demilestoned"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.demilestoned'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.dequeued
+    name: "Test vote pull_request.dequeued"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.dequeued'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.edited
+    name: "Test vote pull_request.edited"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.edited'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.enqueued
+    name: "Test vote pull_request.enqueued"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.enqueued'
+          summary: "All the validators have returned 'pass'!"
+
 
   - when: pull_request.labeled
     name: "Test vote pull_request.labeled"
     validate:
-      - do: title
-        must_exclude:
-          regex: ^\[WIP\]
+      - do: description
+        no_empty:
+          enabled: false
     pass:
       - do: checks
         status: 'success'
         payload:
-          title: 'Mergeable: pull_request.labeled'
+          title: 'Check run of pull_request.labeled'
           summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.locked
+    name: "Test vote pull_request.locked"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.locked'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.milestoned
+    name: "Test vote pull_request.milestoned"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.milestoned'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.opened
+    name: "Test vote pull_request.opened"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.opened'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.push_synchronize
+    name: "Test vote pull_request.push_synchronize"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.push_synchronize'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.ready_for_review
+    name: "Test vote pull_request.ready_for_review"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.ready_for_review'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.reopened
+    name: "Test vote pull_request.reopened"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.reopened'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.review_request_removed
+    name: "Test vote pull_request.review_request_removed"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.review_request_removed'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.review_requested
+    name: "Test vote pull_request.review_requested"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.review_requested'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.synchronize
+    name: "Test vote pull_request.synchronize"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.synchronize'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.unassigned
+    name: "Test vote pull_request.unassigned"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.unassigned'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.unlabeled
+    name: "Test vote pull_request.unlabeled"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.unlabeled'
+          summary: "All the validators have returned 'pass'!"
+
+
+  - when: pull_request.unlocked
+    name: "Test vote pull_request.unlocked"
+    validate:
+      - do: description
+        no_empty:
+          enabled: false
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'Check run of pull_request.unlocked'
+          summary: "All the validators have returned 'pass'!"
+

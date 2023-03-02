@@ -1,4 +1,3 @@
-yaml
 name: A simple workflow
 on:
   push:

@@ -1,0 +1,15 @@
+yaml
+name: A simple workflow
+on:
+  push:
+    branches:
+      - test-voting
+  pull_request:
+    branches:
+      - test-voting
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
